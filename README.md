@@ -117,4 +117,10 @@ Terminal veya komut satırına şu kodu yazın:
 ```bash
 streamlit run app.py
 ```
+## 📚 Veri Seti Kaynakları (Credits)
 
+Bu proje geliştirilirken aşağıdaki açık kaynaklı veri setlerinden yararlanılmış ve hibrit bir yapı oluşturulmuştur:
+
+1.  **SentimentSet:** [Kaggle - Cagla Ballı](https://www.kaggle.com/datasets/caglaballi/sentimentset)
+2.  **Turkish Tweet Dataset:** [Kaggle - Anil1055](https://www.kaggle.com/datasets/anil1055/turkish-tweet-dataset)
+    * *Not:* Bu veri setindeki etiketler, proje gereksinimlerine uygun olarak (Pozitif/Negatif/Nötr) yeniden düzenlenmiş ve temizlenmiştir.
