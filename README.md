@@ -1,7 +1,7 @@
 # 🇹🇷 Gelişmiş Duygu Analizi ve Örüntü Tanıma Projesi
 ### (Advanced Sentiment Analysis & Pattern Recognition System)
 
-![Python](https://img.shields.io/badge/Python-3.11%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/AI-Naive%20Bayes-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
@@ -95,4 +95,3 @@ Terminal veya komut satırına şu kodu yazın:
 streamlit run app.py
 ```
 
-**👤 Geliştiren:** Semanur Yıldırım
