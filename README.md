@@ -47,12 +47,28 @@ Model her açılışta tekrar eğitilmez.
 
 ## 🛠️ Teknoloji Yığını (Tech Stack)
 
-* **Dil:** Python 3.x
-* **Arayüz:** Streamlit (Custom CSS & Terminal Style UI)
-* **Makine Öğrenimi:** Scikit-Learn (Multinomial Naive Bayes)
-* **Vektörleştirme:** TF-IDF (Term Frequency-Inverse Document Frequency) - Bigram destekli.
-* **Veri İşleme:** Pandas & NumPy
-* **Serileştirme:** Joblib
+Projede kullanılan teknolojiler, üstlendikleri görevlere göre aşağıda listelenmiştir:
+
+* **Programlama Dili ve Altyapı:**
+    * **Python 3.13:** Projenin temel geliştirme ortamı olarak, dilin en güncel ve yüksek performanslı sürümü tercih edilmiştir.
+
+* **Kullanıcı Arayüzü (UI/UX):**
+    * **Streamlit:** Kullanıcı dostu, web tabanlı bir arayüz oluşturmak için kullanılmıştır. "Terminal Modu" ve özel renk paletleri için **Custom CSS** entegrasyonu yapılmıştır.
+
+* **Makine Öğrenimi Algoritması:**
+    * **Scikit-Learn (Multinomial Naive Bayes):** Metin sınıflandırma problemlerinde (özellikle kelime frekanslarına dayalı analizlerde) yüksek doğruluk ve hız sağladığı için bu algoritma seçilmiştir.
+
+* **Veri Artırma ve İyileştirme (Data Augmentation):**
+    * **Random Swap & Hard Mining:** Veri setindeki dengesizliği gidermek ve modelin "zor" cümleleri (ironi, bağlaçlar vb.) anlaması için özel sentetik veri üretme algoritmaları geliştirilmiştir.
+
+* **Özellik Çıkarımı (Feature Extraction):**
+    * **TF-IDF (Bigram Destekli):** Metinleri makinenin anlayacağı sayısal vektörlere dönüştürmek için kullanılmıştır. Tekli kelimeler yerine ikili kelime gruplarını (Bigram) da analiz ederek bağlam kaybını önler.
+
+* **Veri Manipülasyonu ve Temizlik:**
+    * **Pandas & NumPy:** Büyük veri setlerinin (.csv) okunması, birleştirilmesi, RegEx ile temizlenmesi ve matris işlemleri için kullanılmıştır.
+
+* **Model Optimizasyonu ve Performans:**
+    * **Joblib:** Eğitilen modelin ve vektörleştiricinin diske kaydedilip (serialization), uygulamanın her açılışında tekrar eğitim yapmadan milisaniyeler içinde çalışmasını sağlamak için kullanılmıştır.
 
 ---
 
