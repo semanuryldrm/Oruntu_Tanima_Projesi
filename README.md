@@ -1,5 +1,4 @@
-# 🇹🇷 Gelişmiş Duygu Analizi ve Örüntü Tanıma Projesi
-### (Advanced Sentiment Analysis & Pattern Recognition System)
+# 🇹🇷 Gelişmiş Duygu Analizi Projesi
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
