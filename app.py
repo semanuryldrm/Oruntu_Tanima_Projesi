@@ -13,7 +13,6 @@ st.set_page_config(
 # CSS Tasarımı
 st.markdown("""
 <style>
-    /* Sonuç Kartları */
     .result-card {
         padding: 20px;
         border-radius: 15px;
@@ -25,8 +24,6 @@ st.markdown("""
     .result-card:hover {
         transform: scale(1.02);
     }
-    
-    /* Başlıklar */
     .main-title {
         text-align: center;
         color: #1565C0;
@@ -64,6 +61,22 @@ def temizle_metin(metin):
     metin = re.sub(r'[^\w\s]', '', metin)
     metin = re.sub(r'\d+', '', metin)
     return metin
+
+# --- HTML OLUŞTURUCU FONKSİYON (HATAYI ÇÖZEN KISIM) ---
+def get_terminal_html(text):
+    # Bu fonksiyon HTML kodunu sıfır girinti ile oluşturur.
+    # Böylece </div> hatası oluşmaz.
+    return f"""
+<div style="background-color: #1E1E1E; border-left: 6px solid #FFD700; border-radius: 10px; padding: 20px; margin-top: 20px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); color: #E0E0E0;">
+<div style="display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+<span style="font-size: 20px; margin-right: 10px;">⚙️</span>
+<span style="font-weight: bold; color: #FFD700; font-family: monospace; letter-spacing: 1px;">ALGORİTMA GİRDİSİ (PROCESSED DATA)</span>
+</div>
+<div style="font-family: 'Courier New', monospace; color: #00FF7F; font-size: 15px; background-color: #000000; padding: 15px; border-radius: 5px;">
+> {text}
+</div>
+</div>
+"""
 
 # --- 3. YAN MENÜ ---
 with st.sidebar:
@@ -110,34 +123,8 @@ if analiz_butonu:
         vektor = vectorizer.transform([clean_text])
         tahmin = model.predict(vektor)[0]
         
-        # --- İŞLENMİŞ VERİ (DARK TERMINAL TARZI) ---
-        st.markdown(f"""
-        <div style="
-            background-color: #1E1E1E;
-            border-left: 6px solid #FFD700;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            color: #E0E0E0;
-        ">
-            <div style="display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-                <span style="font-size: 20px; margin-right: 10px;">⚙️</span>
-                <span style="font-weight: bold; color: #FFD700; font-family: monospace; letter-spacing: 1px;">ALGORİTMA GİRDİSİ (PROCESSED DATA)</span>
-            </div>
-            <div style="
-                font-family: 'Courier New', monospace;
-                color: #00FF7F;
-                font-size: 15px;
-                background-color: #000000;
-                padding: 15px;
-                border-radius: 5px;
-            ">
-                > {clean_text}
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        # --- KESİN ÇÖZÜM: Fonksiyonu Çağırıyoruz ---
+        st.markdown(get_terminal_html(clean_text), unsafe_allow_html=True)
 
         # --- SONUÇ KARTLARI ---
         col1, col2, col3 = st.columns([1,2,1])
@@ -151,7 +138,6 @@ if analiz_butonu:
                     <p style="font-size:14px;">Algılanan Duygu: <b>Mutluluk / Memnuniyet</b></p>
                 </div>
                 """, unsafe_allow_html=True)
-                # Balonlar kaldırıldı
                 
             elif tahmin == 0: # NEGATİF
                 st.markdown("""
