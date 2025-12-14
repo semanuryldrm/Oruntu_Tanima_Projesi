@@ -85,11 +85,19 @@ Projede kullanılan teknolojiler, üstlendikleri görevlere göre aşağıda lis
 
 ---
 
-## 🖥️ Arayüz Tasarımı
+## 🖥️ Arayüz ve Kullanıcı Deneyimi (UI/UX)
 
-Proje, kullanıcı deneyimini artırmak için özel CSS ile tasarlanmış modern bir arayüze sahiptir:
-* **Terminal Tarzı Veri Gösterimi:** Arka planda işlenen ham veriyi (Cleaned Data) koyu modda, kod bloğu şeklinde gösterir.
-* **Dinamik Sonuç Kartları:** Tahmin sonucuna göre (Mutlu, Üzgün, Nötr) renk değiştiren ve gölgeli kart tasarımı.
+Proje, hem son kullanıcıya hitap eden hem de arka plandaki teknik süreci şeffaf bir şekilde gösteren özel bir tasarıma sahiptir. **Streamlit** altyapısı, **Custom CSS (Özel Stil Şablonları)** ile güçlendirilmiştir.
+
+* **💻 Terminal Tarzı Veri Görselleştirmesi (Backend Visualization):**
+    * Kullanıcının girdiği ham metnin, model tarafından işlenmeden önce nasıl temizlendiğini (RegEx, Lowercase vb.) göstermek için **"Dark Terminal"** teması tasarlanmıştır.
+    * Siyah arka plan, *Monospace* yazı tipi ve altın sarısı vurgularla profesyonel bir "Developer Console" görünümü sunar.
+
+* **🎴 Dinamik Sonuç Kartları (Smart Result Cards):**
+    * Modelin tahminine (Prediction) göre anlık olarak renk ve içerik değiştiren reaktif kart yapısı kullanılmıştır.
+    * **Pozitif:** Yeşil tonları ve başarı vurgusu.
+    * **Negatif:** Kırmızı tonları ve uyarı vurgusu.
+    * **Nötr:** Sarı tonları ve bilgi vurgusu.
 
 ---
 
@@ -99,7 +107,7 @@ Projeyi kendi bilgisayarınızda çalıştırmak için adımları takip edin:
 
 **1. Gerekli Kütüphaneleri Yükleyin:**
 ```bash
-pip install pandas scikit-learn streamlit joblib
+pip install pandas scikit-learn streamlit joblib numpy
 ```
 **2. Modeli Eğitin (Opsiyonel):**
 Eğer veri setinde değişiklik yaptıysanız, Jupyter Notebook dosyasını (`Örüntü_tanıma_proje.ipynb`) çalıştırarak `final_model.pkl` dosyasını güncelleyin. (Hazır dosyalar projede mevcuttur).
