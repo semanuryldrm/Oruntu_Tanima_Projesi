@@ -55,10 +55,10 @@ model, vectorizer = model_yukle()
 
 # Temizlik Fonksiyonu
 def temizle_metin(metin):
-    metin = str(metin).lower()
+    metin = str(metin).lower() # KÜÇÜK HARFE ÇEVİRME KRİTİK!
     metin = re.sub(r'http\S+|www\S+', '', metin)
     metin = re.sub(r'@[A-Za-z0-9]+', '', metin)
-    metin = re.sub(r'[^\w\s]', '', metin)
+    metin = re.sub(r'[^\w\s]', '', metin) # NOKTALAMAYI KALDIRMA
     metin = re.sub(r'\d+', '', metin)
     return metin
 
